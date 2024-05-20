@@ -1,0 +1,27 @@
+{
+  "name": "cash-register_sb-pet",
+  "version": "1.0.0",
+  "description": "esign a cash register drawer function `checkCashRegister()` that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "fp": "node src/fp.js",
+    "imp": "node src/imp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WashingtonYandun/cash-register_sb-pet.git"
+  },
+  "keywords": [
+    "fp"
+  ],
+  "author": "WashingtonYandun",
+  "bugs": {
+    "url": "https://github.com/WashingtonYandun/cash-register_sb-pet/issues"
+  },
+  "homepage": "https://github.com/WashingtonYandun/cash-register_sb-pet#readme",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
