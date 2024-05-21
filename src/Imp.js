@@ -1,8 +1,21 @@
+/**
+ * Rounds a number to the specified decimal places.
+ *
+ * @param {number} num - The number to be rounded.
+ * @param {number} [dec=10] - The number of decimal places to round to. Default is 10.
+ * @returns {number} - The rounded number.
+ */
 export function round(num, dec = 10) {
     const mul = Math.pow(10, dec);
     return Math.round(num * mul) / mul;
 }
 
+/**
+ * Improves the given cash-in-drawer (cid) array by adding additional properties to each currency unit.
+ *
+ * @param {Array<Array<string|number>>} cid - The cash-in-drawer array containing currency units and their amounts.
+ * @returns {Array<Object>} - The improved cash-in-drawer array.
+ */
 export function improveCid(cid) {
     const VALUES = [
         ["PENNY", 0.01],
@@ -30,6 +43,14 @@ export function improveCid(cid) {
     return improvedCid;
 }
 
+/**
+ * Calculates the change to be given based on the price, cash provided, and the available cash in the cash register.
+ *
+ * @param {number} price - The price of the item.
+ * @param {number} cash - The amount of cash provided.
+ * @param {Array} cid - The cash in the cash register.
+ * @returns {Object} - An status and the change to be given.
+ */
 export function checkCashRegister(price, cash, cid) {
     const STATUS_TYPE = {
         INSUFFICIENT_FUNDS: "INSUFFICIENT_FUNDS",
@@ -82,6 +103,13 @@ export function checkCashRegister(price, cash, cid) {
     };
 }
 
+/**
+ * Calculates the change to be given based on the amount needed and the available cash in the drawer.
+ *
+ * @param {number} needed - The amount of change needed.
+ * @param {Array} cid - The cash in drawer, an array of objects representing the currency units and their quantities.
+ * @returns {Array} - The change to be given, sorted in descending order of value.
+ */
 export function makeChage(needed, cid) {
     const scid = cid.map((x) => {
         return x;
